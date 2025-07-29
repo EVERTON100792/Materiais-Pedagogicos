@@ -1153,6 +1153,40 @@ body.dark-mode .theme-toggle-btn .fa-moon { display: none; }
         font-size: 0.9rem;  /* Diminui um pouco a fonte */
     }
     /* --- FIM DO NOVO CÓDIGO --- */
+
+    /* --- INÍCIO DO NOVO CÓDIGO --- */
+    /* Otimização da Seção Hero para Celular (Evitar Rolagem) */
+
+    .hero {
+        /* Remove a altura mínima de 100% da tela, deixando a altura se ajustar ao conteúdo */
+        min-height: auto;
+        /* Ajusta o espaçamento interno para dar espaço, mas sem exagerar */
+        padding: 6rem 0 4rem 0;
+    }
+
+    .hero-image {
+        /* Diminui a margem abaixo da imagem animada */
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-graphic {
+        /* Diminui drasticamente o tamanho da imagem/animação no celular */
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-title {
+        /* Diminui um pouco mais a fonte do título principal no celular */
+        font-size: 2.2rem;
+        margin-bottom: 1rem; /* Reduz o espaçamento abaixo do título */
+    }
+
+    .hero-description {
+        font-size: 1rem; /* Diminui a fonte da descrição */
+        margin-bottom: 1.5rem; /* Reduz o espaçamento para os botões ficarem mais próximos */
+    }
+    /* --- FIM DO NOVO CÓDIGO --- */
+}
 }
     .nav-menu {
         position: fixed;
