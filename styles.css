@@ -1139,7 +1139,21 @@ body.dark-mode .theme-toggle-btn .fa-moon { display: none; }
         align-items: center;
         justify-content: space-between;
     }
+    .hero-buttons {
+        /* Centraliza os botões na linha */
+        justify-content: center;
+        /* Força os botões a não quebrarem a linha */
+        flex-wrap: nowrap;
+    }
 
+    /* Opcional, mas recomendado para telas muito pequenas:
+       Reduz um pouco o tamanho dos botões para caberem melhor */
+    .hero-buttons .btn {
+        padding: 10px 18px; /* Diminui o espaçamento interno */
+        font-size: 0.9rem;  /* Diminui um pouco a fonte */
+    }
+    /* --- FIM DO NOVO CÓDIGO --- */
+}
     .nav-menu {
         position: fixed;
         left: -100%;
