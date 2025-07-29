@@ -9,7 +9,7 @@
     --success-color: #28a745;
     --success-dark-color: #20c997;
 
-    --background-light: #F3EFE7;      /* ou o rosa que você testou */
+    --background-light: #F3EFE7;
     --background-light-alt: #FFFFFF;
     --text-light: #2c3e50;
     --text-light-muted: #495057;
@@ -213,7 +213,7 @@ p {
 }
 
 /* ============================================= */
-/* HEADER & NAVIGATION                           */
+/* HEADER & NAVIGATION (DESKTOP)                 */
 /* ============================================= */
 .header {
     position: fixed;
@@ -236,7 +236,6 @@ body.dark-mode .header {
 body.dark-mode .header.scrolled {
     background: rgba(26, 26, 26, 0.98);
 }
-
 
 .nav-container {
     display: flex;
@@ -289,7 +288,6 @@ body.dark-mode .header.scrolled {
     background: var(--primary-color);
     transition: width 0.3s ease;
 }
-
 .nav-link:hover {
     color: var(--primary-color);
 }
@@ -393,7 +391,6 @@ body.dark-mode .header.scrolled {
     gap: 1rem;
     animation: bookRotate 8s linear infinite;
 }
-
 .hero-books i {
     font-size: 3rem;
     margin: 0.5rem;
@@ -402,7 +399,6 @@ body.dark-mode .header.scrolled {
 .hero-books i:nth-child(1) { animation-delay: 0s; }
 .hero-books i:nth-child(2) { animation-delay: 0.3s; }
 .hero-books i:nth-child(3) { animation-delay: 0.6s; }
-
 
 .hero-bg-elements {
     position: absolute;
@@ -450,7 +446,7 @@ section {
 /* ============================================= */
 /* PRODUCTS SECTION                              */
 /* ============================================= */
-.products, #materiais-gratuitos, .faq {
+.products, .faq {
     background-color: var(--background-light-alt);
 }
 
@@ -464,6 +460,18 @@ section {
     grid-template-columns: 350px;
     justify-content: center;
 }
+
+/* AJUSTE PARA A SEÇÃO DE DESTAQUES */
+#produtos-destaque .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 992px) {
+    #produtos-destaque .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 .product-card {
     background: var(--background-light);
@@ -591,7 +599,6 @@ body.dark-mode .product-card:hover {
 /* ============================================= */
 /* ABOUT SECTION                                 */
 /* ============================================= */
-/* Estilos integrados a partir do seu HTML para centralizar o conteúdo */
 .about-content {
     display: grid;
     grid-template-columns: 1fr;
@@ -606,15 +613,15 @@ body.dark-mode .product-card:hover {
 .about-description {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    max-width: 700px; /* Limita a largura do texto para melhor leitura */
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .features-list {
-    display: inline-grid; /* Permite que a lista se ajuste ao conteúdo */
+    display: inline-grid;
     gap: 1.5rem;
-    text-align: left; /* Alinha o texto dos itens à esquerda */
+    text-align: left;
 }
 
 .feature-item {
@@ -811,7 +818,6 @@ body.dark-mode .faq-item {
 /* ============================================= */
 /* FOOTER (VERSÃO FINAL E CORRIGIDA)             */
 /* ============================================= */
-
 .footer {
     background: var(--background-light-alt);
     color: var(--text-light-muted);
@@ -821,13 +827,11 @@ body.dark-mode .faq-item {
 
 .footer-content {
     display: grid;
-    /* MUDANÇA PRINCIPAL NO LAYOUT: Definindo colunas explícitas. */
-    /* A primeira coluna (descrição) ocupará 1.5x o espaço da segunda (links). */
     grid-template-columns: 1.5fr 1fr;
     gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
-    align-items: start; /* Alinha os itens no topo de cada coluna. */
+    align-items: start;
 }
 
 .footer-section {
@@ -929,8 +933,8 @@ body.dark-mode .faq-item {
 
 /* --- Estilos para o MODO ESCURO --- */
 body.dark-mode .footer {
-    background: #1f1f1f; /* Fundo um pouco mais claro que o body para se destacar */
-    color: #a0a0a0;      /* Cor padrão do texto mais suave */
+    background: #1f1f1f;
+    color: #a0a0a0;
 }
 
 body.dark-mode .footer-logo,
@@ -938,13 +942,12 @@ body.dark-mode .footer-section h4 {
     color: #fff;
 }
 
-/* CORREÇÃO DA COR AZUL: Regra mais específica para os links */
 body.dark-mode .footer .footer-links a {
-    color: #a0a0a0; /* Mesma cor suave do parágrafo */
+    color: #a0a0a0;
 }
 
 body.dark-mode .footer .footer-links a:hover {
-    color: var(--primary-color); /* Mantém o destaque rosa */
+    color: var(--primary-color);
 }
 
 body.dark-mode .social-link {
@@ -956,24 +959,6 @@ body.dark-mode .developer-credit,
 body.dark-mode .footer-bottom {
     border-top-color: #333;
     color: #a0a0a0;
-}
-
-/* --- AJUSTE RESPONSIVO PARA O LAYOUT --- */
-@media screen and (max-width: 768px) {
-    .footer-content {
-        /* No celular, volta a ser uma coluna única */
-        grid-template-columns: 1fr;
-        text-align: center; /* Centraliza o conteúdo */
-    }
-
-    .footer-section {
-        padding-right: 0;
-    }
-    
-    /* Centraliza o logo e os ícones sociais no modo de uma coluna */
-    .footer-logo, .social-links {
-        justify-content: center;
-    }
 }
 
 
@@ -1016,7 +1001,6 @@ body.dark-mode .loading-spinner {
     border-color: rgba(255,255,255,0.1);
     border-top-color: var(--primary-color);
 }
-
 
 /* ============================================= */
 /* FLOATING BUTTONS & THEME TOGGLE               */
@@ -1113,7 +1097,6 @@ body.dark-mode .theme-toggle-btn .fa-moon { display: none; }
     background: var(--primary-dark-color);
 }
 
-
 /* ================================================== */
 /* ACCESSIBILITY: REDUCED MOTION                      */
 /* ================================================== */
@@ -1129,65 +1112,11 @@ body.dark-mode .theme-toggle-btn .fa-moon { display: none; }
     }
 }
 
-
 /* ============================================= */
 /* MEDIA QUERIES (RESPONSIVE)                    */
 /* ============================================= */
 @media screen and (max-width: 768px) {
-    .nav-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .hero-buttons {
-        /* Centraliza os botões na linha */
-        justify-content: center;
-        /* Força os botões a não quebrarem a linha */
-        flex-wrap: nowrap;
-    }
-
-    /* Opcional, mas recomendado para telas muito pequenas:
-       Reduz um pouco o tamanho dos botões para caberem melhor */
-    .hero-buttons .btn {
-        padding: 10px 18px; /* Diminui o espaçamento interno */
-        font-size: 0.9rem;  /* Diminui um pouco a fonte */
-    }
-    /* --- FIM DO NOVO CÓDIGO --- */
-
-    /* --- INÍCIO DO NOVO CÓDIGO --- */
-    /* Otimização da Seção Hero para Celular (Evitar Rolagem) */
-
-    .hero {
-        /* Remove a altura mínima de 100% da tela, deixando a altura se ajustar ao conteúdo */
-        min-height: auto;
-        /* Ajusta o espaçamento interno para dar espaço, mas sem exagerar */
-        padding: 6rem 0 4rem 0;
-    }
-
-    .hero-image {
-        /* Diminui a margem abaixo da imagem animada */
-        margin-bottom: 1.5rem;
-    }
-
-    .hero-graphic {
-        /* Diminui drasticamente o tamanho da imagem/animação no celular */
-        width: 220px;
-        height: 220px;
-    }
-
-    .hero-title {
-        /* Diminui um pouco mais a fonte do título principal no celular */
-        font-size: 2.2rem;
-        margin-bottom: 1rem; /* Reduz o espaçamento abaixo do título */
-    }
-
-    .hero-description {
-        font-size: 1rem; /* Diminui a fonte da descrição */
-        margin-bottom: 1.5rem; /* Reduz o espaçamento para os botões ficarem mais próximos */
-    }
-    /* --- FIM DO NOVO CÓDIGO --- */
-}
-
+    /* --- NAVEGAÇÃO E CABEÇALHO --- */
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1200,50 +1129,138 @@ body.dark-mode .theme-toggle-btn .fa-moon { display: none; }
         z-index: 1000;
         height: calc(100vh - var(--header-height));
         padding-top: 2rem;
+        display: flex;
     }
+
     .nav-menu.active {
         left: 0;
     }
 
-    .nav-item { margin: 1rem 0; }
-    .nav-link { color: white !important; font-size: 1.2rem; }
-    .nav-link:hover { color: white !important; }
-    .nav-link::after { background: white; }
+    .nav-item {
+        margin: 1rem 0;
+    }
 
-    .nav-toggle { display: flex; order: 3; z-index: 1002; }
-    .theme-toggle-btn { order: 2; margin-left: 0; margin-right: 1rem; }
-    .nav-logo { order: 1; }
+    .nav-link {
+        color: white !important;
+        font-size: 1.2rem;
+    }
+    
+    .nav-link:hover {
+        color: white !important;
+    }
+    
+    .nav-link::after {
+        background: white;
+    }
 
-    .nav-toggle.active .bar:nth-child(2) { opacity: 0; }
-    .nav-toggle.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-toggle.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-toggle {
+        display: flex;
+        order: 3;
+        z-index: 1002;
+    }
+    
+    .theme-toggle-btn {
+        order: 2;
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+    
+    .nav-logo {
+        order: 1;
+    }
+    
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 
     body.dark-mode .nav-menu {
         background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
     }
 
-    .hero-container { grid-template-columns: 1fr; text-align: center; }
-    .hero-image { order: -1; margin-bottom: 2rem; }
-    .hero-title { font-size: 2.5rem; }
-
-    #materiais-gratuitos .products-grid, .products-grid {
+    /* --- SEÇÃO HERO --- */
+    .hero-container {
         grid-template-columns: 1fr;
-        justify-content: initial;
+        text-align: center;
     }
     
+    .hero-image {
+        order: -1;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-graphic {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .hero-buttons .btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 6rem 0 4rem 0;
+    }
+
+    /* --- OUTRAS SEÇÕES --- */
+    #produtos-destaque .products-grid,
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
 
-    .footer-content { text-align: center; }
-    .footer-section { padding-right: 0; margin-bottom: 2rem; }
-    .footer-logo, .social-links { justify-content: center; }
+    /* --- RODAPÉ --- */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
+    .footer-section {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .footer-logo, .social-links {
+        justify-content: center;
+    }
+
+    /* --- BOTÕES FLUTUANTES --- */
     .whatsapp-float {
         width: 60px;
         height: 60px;
         padding: 0;
         justify-content: center;
     }
-    .whatsapp-float .whatsapp-text { display: none; }
+
+    .whatsapp-float .whatsapp-text {
+        display: none;
+    }
 }
+o menu hamburguer essta com as barrinhas separadas
