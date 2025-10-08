@@ -457,7 +457,7 @@ section {
 }
 
 #materiais-gratuitos .products-grid {
-    grid-template-columns: 350px;
+    grid-template-columns: repeat(2, 350px);
     justify-content: center;
 }
 
